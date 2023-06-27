@@ -56,7 +56,7 @@
     <body>
         <div class="row">
             <div class="centered-div">
-                <h3>Signup</h3>
+                <h3>Create Account</h3>
                 <form action="includes/formhandler.inc.php" method="post">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="pwd" placeholder="Password">
