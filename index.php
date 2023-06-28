@@ -6,52 +6,8 @@
         <title> Index Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <style type="text/css">
-            .row {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                }
-
-                .centered-div {
-                max-width: 400px;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                background-color: #f8f8f8;
-                }
-
-                .centered-div h3 {
-                text-align: center;
-                }
-
-                .centered-div form {
-                margin-top: 20px;
-                }
-
-                .centered-div input,
-                .centered-div button {
-                display: block;
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                }
-
-                .centered-div button {
-                background-color: #4CAF50;
-                color: white;
-                cursor: pointer;
-                }
-
-                .centered-div button:hover {
-                background-color: #45a049;
-                }
-
-        </style>
+        <link rel="stylesheet" href="main.css">
+       
     </head>
     <body>
         <div class="row">
