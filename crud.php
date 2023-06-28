@@ -25,7 +25,7 @@
         <div class="row">
             <div class="centered-div">
                 <h3>Delete Account</h3>
-                <form action="includes/userupdate.inc.php" method="post">
+                <form action="includes/userdelete.inc.php" method="post">
                     <input type="text" name="username" placeholder="Username">
                     <input type="password" name="pwd" placeholder="Password">
                     <button type="submit">Delete</button>
