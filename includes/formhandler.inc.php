@@ -18,6 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $pdo = null;
         $stmt = null;
+        $response = "<h1>Thank you,!</h1>";
+        $response .= "<p>Your email ($email) has been submitted successfully.</p>";
+        echo $response;
 
         header("Location: ../index.php");
 

@@ -2,7 +2,7 @@
 // Set up connection parameters
 $host = 'localhost';
 $user = 'php_root';
-$password = 'MugoYA23?';
+$password = 'password';
 $database = 'php_users';
 $dsn = "mysql:host=$host;dbname=$database";
 
