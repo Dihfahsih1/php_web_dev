@@ -1,35 +1,33 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = $_POST["username"];
-    $pwd = $_POST["pwd"];
+    $fName = $_POST["firstName"];
+    $sName = $_POST["secondName"];
     $email = $_POST["email"];
+    $tel = $_POST["telephone"];
+    $course = $_POST["course"];
 
     try {
         require_once "dbh.inc.php";
         
-        $query = "INSERT INTO users (username, pwd, email) VALUES(:username, :pwd, :email);";
+        $query = "INSERT INTO registration (firstName, secondName, email, telephone, course) VALUES(:firstName, :secondName, :email, :telephone, :course);";
 
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":pwd", $pwd);
+        $stmt->bindParam(":firstName", $fName);
+        $stmt->bindParam(":secondName", $sName);
+        $stmt->bindParam(":telephone", $tel);
         $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":course", $course);
         $stmt->execute();
 
-        $pdo = null;
-        $stmt = null;
-        $response = "<h1>Thank you,!</h1>";
-        $response .= "<p>Your email ($email) has been submitted successfully.</p>";
-        echo $response;
-
         header("Location: ../index.php");
+        exit(); // Use exit() instead of die() to terminate the script
 
-        die();
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }
-
 }
-else{
+else {
     header("Location: ../index.php");
+    exit(); // Use exit() instead of die() to terminate the script
 }
