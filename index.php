@@ -60,6 +60,12 @@
                 align-items: center;
                 color: #fff; /* Set the color of the content */
             }
+            select#course {
+            cursor: pointer;
+            }
+            select#course option {
+            cursor: pointer;
+            }
         </style>
     </head>
     <body style="background-color:black; color:white">
@@ -214,8 +220,19 @@
                         <div class="form-group mb-3">
                             <input type="text" name="secondName" class="form-control" placeholder="Second Name">
                         </div>
-                        <div class="form-group mb-3">
+
+                        <!-- <div class="form-group mb-3">
                             <input type="text" name="course" class="form-control" placeholder="Course you want">
+                        </div> -->
+
+                        <div class="form-group mb-3">
+                            <select name="course" id="course" class="form-control" required>
+                                <option value="">--Select a Course--</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                                <option value="Full-stack">Full-stack</option>
+                                <option value="CI/CD Integration">CI/CD Integration</option>
+                            </select>
                         </div>
                         <div class="form-group mb-3">
                             <input type="text" name="telephone" class="form-control"

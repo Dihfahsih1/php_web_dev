@@ -1,4 +1,4 @@
-<!-- delete_data.php -->
+<!-- delete_data_handler -->
 
 <?php
 // Make sure you have included the database connection code
@@ -19,7 +19,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
         die("Delete query failed.");
     }
 } else {
-    header("Location: display_data.php");
+    header("Location: ../display_data.php");
     exit();
 }
 ?>

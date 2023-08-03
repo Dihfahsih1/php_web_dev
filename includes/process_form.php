@@ -1,14 +1,14 @@
 <?php
     require_once "dbconnect.php";
 
-
+    // make primary key in phpmyadmin
+    // ALTER TABLE users MODIFY COLUMN email INT AUTO_INCREMENT PRIMARY KEY;
     $query = "INSERT INTO registration (firstName, secondName, email, telephone, course) VALUES (?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($connect, $query);
     if (!$stmt) {
         die("Prepare failed: " . mysqli_error($connect));
     }
-
 
     mysqli_stmt_bind_param($stmt, "sssss", $fName, $sName, $email, $tel, $course);
     $fName = $_POST["firstName"];
@@ -20,11 +20,9 @@
     if (mysqli_stmt_execute($stmt)) {
         header("Location: ../display_data.php?success=true");
         // echo "Data inserted successfully.";
-    } 
-    
-    else {
+    }else {
         die("Execute failed: " . mysqli_error($connect));
     }
+
     mysqli_stmt_close($stmt);
     mysqli_close($connect);
-?>

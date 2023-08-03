@@ -1,5 +1,5 @@
 <?php
-// update_handler.php
+// update_handler
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
@@ -14,7 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once "dbconnect.php";
 
         // Update the data in the database table 'registration'
-        $query = "UPDATE registration SET firstName = ?, secondName = ?, email = ?, telephone = ?, course = ? WHERE id = ?";
+        $query = "UPDATE registration SET firstName = ?, secondName = ?,
+         email = ?, telephone = ?, course = ? WHERE id = ?";
+
         $stmt = mysqli_prepare($connect, $query);
         mysqli_stmt_bind_param($stmt, "sssssi", $fName, $sName, $email, $tel, $course, $id);
         mysqli_stmt_execute($stmt);
@@ -25,8 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         die("Query failed: " . $e->getMessage());
     }
-} else {
+}else {
     header("Location: display_data.php");
     exit();
 }
-?>

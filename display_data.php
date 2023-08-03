@@ -15,43 +15,6 @@
         
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-        <style>
-            /* Ensure all carousel images have equal width and height */
-            .carousel-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover; /* This ensures the image fills the container while maintaining aspect ratio */
-            }
-
-            /* Overlay styles */
-            .carousel-item .overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5); /* Change the alpha value to adjust the overlay opacity */
-            }
-
-            /* Content styles */
-            .carousel-content {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: #fff; /* Set the color of the content */
-            }
-             /* Set a minimum height for the table */
-            .table {
-                min-height: 300px;
-            }
-        </style>
     </head>
     
     <body style="background-color:black; color:white">
@@ -133,7 +96,7 @@
                     <?php
                         if (isset($_GET["success"]) && $_GET["success"] == "true") {
                            echo '<div class="text-center alert alert-success mt-3" role="alert">
-                                    Data updated successfully!
+                                    Data Created successfully!
                                 </div>';
                         }
                     ?>
