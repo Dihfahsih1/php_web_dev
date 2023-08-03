@@ -19,7 +19,31 @@
                 height: 100%;
                 object-fit: cover; /* This ensures the image fills the container while maintaining aspect ratio */
             }
-        </style> 
+
+            /* Overlay styles */
+            .carousel-item .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Change the alpha value to adjust the overlay opacity */
+            }
+
+            /* Content styles */
+            .carousel-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff; /* Set the color of the content */
+            }
+        </style>
     </head>
     <body>
         <div class="container-fluid" style="border:3px solid green">
@@ -92,17 +116,33 @@
                 </div>
                 
                 <div class="col-lg-7 col-md-6 middle-column" style="border: 2px solid red;">
-                    <h3>Welcome to this cool website</h3>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img src="images/image1.jpg" alt="image1" />
+                                <img src="images/image3.png" alt="image1" />
+                                <!-- Add the overlay element -->
+                                <div class="overlay"></div>
+
+                                <!-- Add content on top of the carousel -->
+                                <div class="carousel-content">
+                                    <h2>Welcome to Our Website</h2>
+                                    <p>We have trained thousands of students in web development</p>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/image2.jpg" alt="image2" />
+                                <img src="images/image2.jpeg" alt="image2" />
+                                <!-- Add the overlay element -->
+                                <div class="overlay"></div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/image3.jpg" alt="image3" />
+                                <img src="images/image2.jpg" alt="image3" />
+                                <!-- Add the overlay element -->
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/image3.jpg" alt="image4" />
+                                <!-- Add the overlay element -->
+                                <div class="overlay"></div>
                             </div>
                         </div>
 
