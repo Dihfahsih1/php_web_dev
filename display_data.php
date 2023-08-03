@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> Index Page</title>
+        <title>Registered Students</title>
         <!-- <link rel="stylesheet" href="css/main.css"> -->
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,22 +16,7 @@
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <script src="js/bootstrap.min.js"></script>
-
         <style>
-              .custom-jumbotron {
-                    background-color: #007bff; /* Change to the desired background color */
-                    color: #fff; /* Change to the desired text color */
-                    padding: 30px; /* Adjust padding as needed */
-                }
-
-                .custom-jumbotron h2 {
-                    font-size: 36px; /* Change to the desired font size for the heading */
-                }
-
-                .custom-jumbotron p {
-                    font-size: 18px; /* Change to the desired font size for the paragraphs */
-                }
             /* Ensure all carousel images have equal width and height */
             .carousel-item img {
                 width: 100%;
@@ -60,10 +47,15 @@
                 align-items: center;
                 color: #fff; /* Set the color of the content */
             }
+             /* Set a minimum height for the table */
+            .table {
+                min-height: 300px;
+            }
         </style>
     </head>
+    
     <body style="background-color:black; color:white">
-        <div class="container-fluid">
+        <div class="container-fluid" style="max-height: 1000px; overflow: auto;">
             <div class="row">
                 <div class="col-md-3 col-lg-2 mt-2" style="border-left:2px solid white;">
                     <nav class="navbar navbar-expand-md navbar-dark bg-black flex-md-column">
@@ -76,8 +68,7 @@
                             border-radius: 3%; margin-left:8%">
                         </a>
                         <!-- Mobile Menu Icon -->
-                        <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -135,79 +126,98 @@
                     </nav>
                 </div>
                 
-                <div class="col-lg-8 col-md-6 mt-5">
-                    <div class="container">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active">
-                                    <img src="images/image3.png" alt="image1" />
-                                    <!-- Add the overlay element -->
-                                    <div class="overlay"></div>
-                                    <!-- Add content on top of the carousel -->
-                                    <div class="carousel-content">
-                                        <h1 style="font-size:50px;">SOFTECH SOLUTIONS UGANDA</h1>
-                                        <h4 style="font-size:30px;">Leading Web Development hub in Uganda</h4>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/image1.webp" alt="image2" />
-                                    <!-- Add the overlay element -->
-                                    <div class="overlay"></div>
-                                    <div class="carousel-content">
-                                        <h2>We offer Backend Training</h2>
-                                        <p>We have trained thousands of students in web development</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/image2.jpg" alt="image3" />
-                                    <!-- Add the overlay element -->
-                                    <div class="overlay"></div>
-                                    <div class="carousel-content">
-                                        <h2>Superb training in frontend</h2>
-                                        <p style="text-align: center;">We offer training in HTML5, CSS, Bootstrap5 and Javascript Frameworks</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/image3.jpg" alt="image4" />
-                                    <!-- Add the overlay element -->
-                                    <div class="overlay"></div>
-                                    <div class="carousel-content">
-                                        <h2>We offer DevOps</h2>
-                                        <p>We have excellent trainings on hosting applications
-                                            <br>both online and locally using docker, kubernetes, git, CD/CI</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Controls -->
-                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                        <div class="jumbotron text-center">
-                            <h3>What is web development?</h3>
-                            <p class="quote">Web development refers to the creating, building, and maintaining of websites.
-                            <br>It includes aspects such as web design, web publishing, web programming,
-                            and database management.
-                            <br>It is the creation of an application that works over the internet i.e. websites.</p>
-                        </div>
+                <div class="col-lg-8 col-md-6  mt-4">
+                   
+                    <h3 class="my-4 text-center">Registered Students</h3>
+                    <!-- Retrieve data -->
+                    <?php
+                        if (isset($_GET["success"]) && $_GET["success"] == "true") {
+                           echo '<div class="text-center alert alert-success mt-3" role="alert">
+                                    Data updated successfully!
+                                </div>';
+                        }
+                    ?>
 
-                        <div class="jumbotron text-center custom-jumbotron">
-                            <h2>Contact us Now</h2>
-                            <p>Email: info@softechug.com</p>
-                            <p>Phone: +123 456 789</p>
-                        </div>
-                    </div>
+                    <?php
+                        if (isset($_GET["update"]) && $_GET["update"] == "success") {
+                            echo '<div class="text-center alert alert-warning mt-3" role="alert">
+                                    Data updated successfully!
+                                </div>';
+                        }
+
+                        if (isset($_GET["delete"]) && $_GET["delete"] == "success") {
+                            echo '<div class="text-center alert alert-danger mt-3" role="alert">
+                                    Data deleted successfully!
+                                </div>';
+                        }
+                    ?>
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Second Name</th>
+                                <th>Email</th>
+                                <th>Telephone</th>
+                                <th>Course</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            // The PHP code for fetching and displaying data is placed here
+                            try {
+                                // Make sure you have included the database connection code
+                                require_once "includes/dbconnect.php";
+
+                                // Fetch data from the database table 'registration'
+                                $query = "SELECT * FROM registration;";
+                                $result = mysqli_query($connect, $query);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['firstName'] . "</td>";
+                                        echo "<td>" . $row['secondName'] . "</td>";
+                                        echo "<td>" . $row['email'] . "</td>";
+                                        echo "<td>" . $row['telephone'] . "</td>";
+                                        echo "<td>" . $row['course'] . "</td>";
+
+                                        // Buttons for update and delete actions
+                                        echo '<td>';
+
+                                        echo '<a href="update.php?id=' . $row['id'] . '"
+                                        class="btn btn-sm btn-primary">
+                                            <i class="fas fa-edit"></i></a>';
+
+                                        // echo '<a href="includes/process_delete.php?id=' . $row['id'] . '"
+                                        // class="btn btn-sm btn-danger"
+                                        // onclick="return confirm(\'Are you sure you want to delete this record?\')">
+                                        //     <i class="fas fa-trash-alt"></i></a>';
+
+                                        echo '<a href="#" class="btn btn-sm btn-danger
+                                            delete-btn" data-id="' . $row['id'] . '">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>';
+                                        echo '</td>';
+
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='6'>No data found.</td></tr>";
+                                }
+                            } catch (Exception $e) {
+                                die("Query failed: " . $e->getMessage());
+                            }
+                            ?>
+
+                        </tbody>
+                    </table>
                 </div>
 
 
                 <div class="col-lg-2 mt-10">
-                    <h3 class="my-4">Register Now</h3>
-                    <form action="includes/process_form.php" method="post">
+                <h3 class="my-4 text-center">Register Now</h3>
+                    <form action="includes/formhandler.inc.php" method="post">
                         <div class="form-group mb-3">
                             <input type="text" name="firstName" class="form-control" placeholder="First Name">
                         </div>
@@ -243,7 +253,7 @@
 
             </div>
         </div>
-            <footer class="bg-dark text-white py-3">
+        <footer class="bg-dark text-white py-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -270,23 +280,49 @@
                     <p style="font-size: 14px; margin-bottom: 0;">&copy; 2023 SofTech Ug. All rights reserved.</p>
                 </div>
             </footer>
-   
-        <script>
-            // Function to activate the carousel
-            function startCarousel() {
-                $('#myCarousel').carousel();
-            }
+            <!-- Add this modal at the end of the <body> section -->
+            <div class="modal fade" id="confirmDeleteModal" tabindex="-1"
+            role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h5 class="modal-title" id="confirmDeleteModalLabel" style="color:black">Confirm Delete</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center" style="color:black">
+                            Are you sure you want to delete this record?
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Confirm Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            // Function to automatically switch the active carousel item every 10 seconds
-            function autoSlideCarousel() {
-                $('#myCarousel').carousel('next');
-            }
-
-            // Start the carousel once the page is fully loaded
+            <script>
+            // JavaScript to handle delete confirmation
             $(document).ready(function() {
-                startCarousel();
-                setInterval(autoSlideCarousel, 5000); // Switch slide every 10 seconds (10000 milliseconds)
+                // When the delete button is clicked
+                $('.delete-btn').on('click', function(e) {
+                    e.preventDefault();
+
+                    // Get the ID of the record to be deleted from the data-id attribute
+                    var id = $(this).data('id');
+
+                    // Show the delete confirmation modal
+                    $('#confirmDeleteModal').modal('show');
+
+                    // If the user confirms delete, trigger the delete action
+                    $('#confirmDeleteBtn').on('click', function() {
+                        // Redirect to the delete_data.php with the ID as a query parameter
+                        window.location.href = 'includes/process_delete.php?id=' + id;
+                    });
+                });
             });
         </script>
     </body>
+    <script src="js/bootstrap.min.js"></script>
 </html>

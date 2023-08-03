@@ -10,7 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     try {
         require_once "dbh.inc.php";
         
-        $query = "INSERT INTO registration (firstName, secondName, email, telephone, course) VALUES(:firstName, :secondName, :email, :telephone, :course);";
+        $query = "INSERT INTO registration (firstName, secondName, email, telephone, course)
+        VALUES(:firstName, :secondName, :email, :telephone, :course);";
 
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":firstName", $fName);
@@ -20,8 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bindParam(":course", $course);
         $stmt->execute();
 
-        header("Location: ../index.php");
+        header("Location: ../index.php?success=true");
         exit(); // Use exit() instead of die() to terminate the script
+
+        
 
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());

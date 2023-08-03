@@ -13,7 +13,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Connection successful
-    echo "Connected successfully";
+    //echo "Connected successfully";
 
     // You can now execute SQL statements or perform other database operations using $conn
 
