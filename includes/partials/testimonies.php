@@ -6,15 +6,18 @@
             // Sample student feedback data (you can replace this with actual data from a database)
             $feedbackData = array(
                 array(
-                    "quote" => "Great experience! I learned a lot about web development and found a job shortly after the training.",
+                    "quote" => "Great experience! I learned a lot about
+                    web development and found a job shortly after the training.",
                     "author" => "John Doe, Frontend Developer"
                 ),
                 array(
-                    "quote" => "The training was intensive and well-structured. I'm now confident in my full-stack development skills.",
+                    "quote" => "The training was intensive and well-structured.
+                     I'm now confident in my full-stack development skills.",
                     "author" => "Jane Smith, Full-stack Developer"
                 ),
                 array(
-                    "quote" => "SOFTECH Uganda provides the best web development training in the region. Highly recommended!",
+                    "quote" => "SOFTECH Uganda provides the best web development
+                    training in the region. Highly recommended!",
                     "author" => "Mike Johnson, Web Developer"
                 )
                 // Add more feedback data as needed
