@@ -21,72 +21,9 @@
         <div class="container-fluid" style="max-height: 1000px; overflow: auto;">
             <div class="row">
                 <div class="col-md-3 col-lg-2 mt-2" style="border-left:2px solid white;">
-                    <nav class="navbar navbar-expand-md navbar-dark bg-black flex-md-column">
-                        <!-- Brand/logo -->
-                    
-                        <a class="navbar-brand" href="#">
-                            <!-- Add styling to the image -->
-                            <img src="images/logo.png" alt="User Image"
-                            class="img-fluid" style="max-width:220px;
-                            border-radius: 3%; margin-left:8%">
-                        </a>
-                        <!-- Mobile Menu Icon -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <!-- Navbar links -->
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav flex-md-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.php">
-                                        <i class="fas fa-home me-2"></i>Home
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="display_data.php">
-                                        <i class="fas fa-message me-2"></i>Students
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-search me-2"></i>About
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-list-ul me-2"></i>Testimonies
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-user me-2"></i>Awards
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-bell me-2"></i>Research
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-envelope me-2"></i>Projects
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-laptop-code me-2"></i>Affliations
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-mortar-pestle me-2"></i>More
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                <?php
+                    include 'includes/partials/nav.html';
+                ?>
                 </div>
                 
                 <div class="col-lg-8 col-md-6  mt-4">
@@ -179,70 +116,17 @@
 
 
                 <div class="col-lg-2 mt-10">
-                <h3 class="my-4 text-center">Register Now</h3>
-                    <form action="includes/formhandler.inc.php" method="post">
-                        <div class="form-group mb-3">
-                            <input type="text" name="firstName" class="form-control" placeholder="First Name">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="text" name="secondName" class="form-control" placeholder="Second Name">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="text" name="course" class="form-control" placeholder="Course you want">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="text" name="telephone" class="form-control"
-                            placeholder="Your Telephone Number">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="text" name="email" class="form-control" placeholder="E-mail">
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                        <?php
-                            if (isset($_GET["success"]) && $_GET["success"] == "true") {
-                                echo "<p style=\"color:green\">Your details have been sent successfully.</p>";
-                            }
-                        ?>
-                    <hr/>
-                    <h4 class="jumbotron">Courses Offered</h4>
-                    <ul class="flex-md-column" style="color:grey">
-                        <li class="nav-item"><a class="nav-link" href="#" style="color:grey">Frontend</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color:grey">Backend</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color:grey">Full-stack</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color:grey">CI/CD Integration</a></li>
-                    </ul>
+                    <?php
+                        include 'includes/partials/register.php';
+                    ?>
                 </div>
 
             </div>
         </div>
-        <footer class="bg-dark text-white py-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h4>About Us</h4>
-                            <p>We are SofTech Ug, a leading web development training institute. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h4>Contact</h4>
-                            <p>Email: info@softechug.com</p>
-                            <p>Phone: +123 456 789</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h4>Follow Us</h4>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid bg-dark text-center border-top py-2">
-                    <p style="font-size: 14px; margin-bottom: 0;">&copy; 2023 SofTech Ug. All rights reserved.</p>
-                </div>
-            </footer>
+        
+        <?php
+            include 'includes/partials/footer.php';
+        ?>
             <!-- Add this modal at the end of the <body> section -->
             <div class="modal fade" id="confirmDeleteModal" tabindex="-1"
             role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">

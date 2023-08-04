@@ -2,7 +2,13 @@
     require_once "dbconnect.php";
 
     // make primary key in phpmyadmin
-    // ALTER TABLE users MODIFY COLUMN email INT AUTO_INCREMENT PRIMARY KEY;
+    //1. ALTER TABLE registration
+    //DROP COLUMN id;
+
+    //2. ALTER TABLE registration
+    // ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY FIRST;
+
+
     $query = "INSERT INTO registration (firstName, secondName, email, telephone, course) VALUES (?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($connect, $query);
