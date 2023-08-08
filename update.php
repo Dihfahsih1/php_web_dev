@@ -160,7 +160,8 @@
                                     ?>
                                     <h2 class="my-4 text-center">Update Data for
                                         <?php echo $data['firstName']; ?>
-                                        <?php echo $data['secondName']; ?></h2>
+                                        <?php echo $data['secondName']; ?></h2> 
+                                        <?php echo $data['id']; ?></h2> 
                                     <form action="includes/process_update.php" method="post">
 
                                         <input type="hidden" name="id" value="<?php echo $data['id']; ?>">

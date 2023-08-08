@@ -6,15 +6,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Registered Students</title>
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- Link the jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <?php
+            include 'includes/partials/head.html';
+        ?>
         
-        <!-- Font Awesome CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     
     <body style="background-color:black; color:white">
@@ -29,6 +24,8 @@
                 <div class="col-lg-8 col-md-6  mt-4">
                    
                     <h3 class="my-4 text-center">Registered Students</h3>
+                    
+                    
                     <!-- Retrieve data -->
                     <?php
                         if (isset($_GET["success"]) && $_GET["success"] == "true") {
@@ -51,6 +48,9 @@
                                 </div>';
                         }
                     ?>
+                    <i style="text-align:right">
+                      <a href="register_form.php" class="btn btn-primary float-end">Register</a>
+                    </i>
                     <table class="table table-bordered table-striped">
                         <thead class="thead-light">
                             <tr>
@@ -86,14 +86,13 @@
                                         echo '<td>';
 
                                         echo '<a href="update.php?id=' . $row['id'] . '"
-                                        class="btn btn-sm btn-primary">
-                                            <i class="fas fa-edit"></i></a>';
+                                        class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>';
 
                                         // echo '<a href="includes/process_delete.php?id=' . $row['id'] . '"
                                         // class="btn btn-sm btn-danger"
                                         // onclick="return confirm(\'Are you sure you want to delete this record?\')">
                                         //     <i class="fas fa-trash-alt"></i></a>';
-
+                                        echo '|';
                                         echo '<a href="#" class="btn btn-sm btn-danger
                                             delete-btn" data-id="' . $row['id'] . '">
                                                 <i class="fas fa-trash-alt"></i>
@@ -171,5 +170,4 @@
             });
         </script>
     </body>
-    <script src="js/bootstrap.min.js"></script>
 </html>

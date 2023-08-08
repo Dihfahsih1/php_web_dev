@@ -3,18 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> Index Page</title>
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- Link the jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
-        <!-- Font Awesome CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-        <script src="js/bootstrap.min.js"></script>
+        <title> Home Page</title>
+        <?php
+            include 'includes/partials/head.html';
+        ?>
     </head>
 
     <body style="background-color:black; color:white">

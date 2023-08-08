@@ -1,5 +1,5 @@
 <h3 class="my-4 text-center">Register Now</h3>
-<form action="includes/formhandler.inc.php" method="post">
+<form action="includes/process_form.php" method="post">
     <div class="form-group mb-3">
         <input type="text" name="firstName" class="form-control" placeholder="First Name">
     </div>
@@ -25,9 +25,21 @@
     ?>
 <hr/>
 <h4 class="jumbotron">Courses Offered</h4>
-<ul class="flex-md-column" style="color:grey">
-    <li class="nav-item"><a class="nav-link" href="#" style="color:grey">Frontend</a></li>
-    <li class="nav-item"><a class="nav-link" href="#" style="color:grey">Backend</a></li>
-    <li class="nav-item"><a class="nav-link" href="#" style="color:grey">Full-stack</a></li>
-    <li class="nav-item"><a class="nav-link" href="#" style="color:grey">CI/CD Integration</a></li>
+<ul class="list-group">
+    <li class="list-group-item">
+        <i class="fas fa-money-bill me-2 text-primary"></i>
+        Frontend
+    </li>
+    <li class="list-group-item">
+        <i class="fas fa-puzzle-piece me-2 text-primary"></i>
+        Backend
+    </li>
+    <li class="list-group-item">
+        <i class="fas fa-cubes me-2 text-primary"></i>
+        Full-stack
+    </li>
+    <li class="list-group-item">
+        <i class="fas fa-cogs me-2 text-primary"></i>
+        CI/CD Integration
+    </li>
 </ul>
