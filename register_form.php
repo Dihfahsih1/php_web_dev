@@ -25,7 +25,7 @@
                                 echo "<p style=\"color:green\">Details saved successfully.</p>";
                             }
                         ?>
-                        <form action="includes/process_registration.php" method="post">
+                        <form action="includes/process_registration.php" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <input type="text" name="firstName" class="form-control"
                                 placeholder="First Name" value="<?php echo $data['firstName']; ?>">
@@ -51,9 +51,16 @@
                                 <input type="text" name="email" class="form-control"
                                 placeholder="E-mail" value="<?php echo $data['email']; ?>">
                             </div>
+
+                            <div class="form-group mb-3">
+                                <label for="avatar">Upload Avatar:</label>
+                                <input type="file" name="avatar" class="form-control-file">
+                            </div>
+
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary float-end">Submit</button>
                             </div>
+                            
                         </form>
                         <br />
                         <hr />

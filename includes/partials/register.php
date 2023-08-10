@@ -1,5 +1,5 @@
 <h3 class="my-4 text-center">Register Now</h3>
-<form action="includes/process_form.php" method="post">
+<form action="includes/process_registration.php" method="post" enctype="multipart/form-data">
     <div class="form-group mb-3">
         <input type="text" name="firstName" class="form-control" placeholder="First Name">
     </div>
@@ -16,6 +16,10 @@
     <div class="form-group mb-3">
         <input type="text" name="email" class="form-control" placeholder="E-mail">
     </div>
+    <div class="form-group mb-3">
+        <label for="avatar">Upload Avatar:</label>
+        <input type="file" name="avatar" class="form-control-file">
+    </div>
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
     <?php
@@ -25,21 +29,21 @@
     ?>
 <hr/>
 <h4 class="jumbotron">Courses Offered</h4>
-<ul class="list-group">
-    <li class="list-group-item">
-        <i class="fas fa-money-bill me-2 text-primary"></i>
-        Frontend
-    </li>
-    <li class="list-group-item">
-        <i class="fas fa-puzzle-piece me-2 text-primary"></i>
-        Backend
-    </li>
-    <li class="list-group-item">
-        <i class="fas fa-cubes me-2 text-primary"></i>
-        Full-stack
-    </li>
-    <li class="list-group-item">
-        <i class="fas fa-cogs me-2 text-primary"></i>
-        CI/CD Integration
-    </li>
-</ul>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <i class="fas fa-money-bill me-2 text-primary"></i>
+            Frontend
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-puzzle-piece me-2 text-primary"></i>
+            Backend
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-cubes me-2 text-primary"></i>
+            Full-stack
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-cogs me-2 text-primary"></i>
+            CI/CD Integration
+        </li>
+    </ul>

@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Update the data in the database table 'registration'
         $query = "UPDATE registration SET firstName = ?, secondName = ?,
          email = ?, telephone = ?, course = ? WHERE id = ?";
-
+        echo "data" . $qury;
         $stmt = mysqli_prepare($connect, $query);
         mysqli_stmt_bind_param($stmt, "sssssi", $fName, $sName, $email, $tel, $course, $id);
         mysqli_stmt_execute($stmt);

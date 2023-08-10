@@ -88,15 +88,15 @@
                                         echo '<a href="update.php?id=' . $row['id'] . '"
                                         class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>';
 
-                                        // echo '<a href="includes/process_delete.php?id=' . $row['id'] . '"
-                                        // class="btn btn-sm btn-danger"
-                                        // onclick="return confirm(\'Are you sure you want to delete this record?\')">
-                                        //     <i class="fas fa-trash-alt"></i></a>';
+                                        echo '<a href="includes/process_delete.php?id=' . $row['id'] . '"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm(\'Are you sure you want to delete this record?\')">
+                                            <i class="fas fa-trash-alt"></i></a>';
                                         echo '|';
-                                        echo '<a href="#" class="btn btn-sm btn-danger
-                                            delete-btn" data-id="' . $row['id'] . '">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>';
+                                        // echo '<a href="#" class="btn btn-sm btn-danger
+                                        //     delete-btn" data-id="' . $row['id'] . '">
+                                        //         <i class="fas fa-trash-alt"></i>
+                                        //     </a>';
                                         echo '</td>';
 
                                         echo "</tr>";
