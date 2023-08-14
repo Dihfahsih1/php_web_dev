@@ -111,6 +111,7 @@
 
                         </tbody>
                     </table>
+                    <canvas id="courseChart" width="100" height="50"></canvas>
                 </div>
 
 
@@ -119,8 +120,81 @@
                         include 'includes/partials/register.php';
                     ?>
                 </div>
-
+                
             </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <?php
+            
+            // Fetch data from the database table 'registration'
+            $query = "SELECT * FROM registration;";
+            $result = mysqli_query($connect, $query);
+
+            $courseData = array(); // Initialize an array to hold course data
+
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $course = $row['course'];
+                    
+                    // If the course exists in the array, increment the count, otherwise set it to 1
+                    if (isset($courseData[$course])) {
+                        $courseData[$course]++;
+                    } else {
+                        $courseData[$course] = 1;
+                    }
+                }
+            }
+
+            ?>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Retrieve data from the PHP-generated table
+    const courseData = <?php echo json_encode($courseData); ?>;
+
+    // Extract course names and registered student counts
+    const courseNames = Object.keys(courseData);
+    const studentCounts = Object.values(courseData);
+
+    // Get the canvas element
+    const canvas = document.getElementById("courseChart");
+    const ctx = canvas.getContext("2d");
+
+    // Create a new chart
+    const courseChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: courseNames,
+            datasets: [{
+                label: 'Number of Students',
+                data: studentCounts,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Courses'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Students'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+
         </div>
         
         <?php
