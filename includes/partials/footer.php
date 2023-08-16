@@ -75,4 +75,5 @@
             // Update the elapsed time every second
             setInterval(updateElapsedTime, 1000);
         </script>
+         <script src="js/bootstrap.min.js"></script>
 

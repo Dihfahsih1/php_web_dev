@@ -1,5 +1,7 @@
 
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +19,7 @@
             <div class="row">
                 <div class="col-md-3 col-lg-2 mt-2" style="border-left:2px solid white;">
                 <?php
-                    include 'includes/partials/nav.html';
+                    include 'includes/partials/nav.php';
                 ?>
                 </div>
                 

@@ -1,32 +1,38 @@
-<h3 class="my-4 text-center">Register Now</h3>
-<form action="includes/process_registration.php" method="post" enctype="multipart/form-data">
-    <div class="form-group mb-3">
-        <input type="text" name="firstName" class="form-control" placeholder="First Name">
-    </div>
-    <div class="form-group mb-3">
-        <input type="text" name="secondName" class="form-control" placeholder="Second Name">
-    </div>
-    <div class="form-group mb-3">
-        <input type="text" name="course" class="form-control" placeholder="Course you want">
-    </div>
-    <div class="form-group mb-3">
-        <input type="text" name="telephone" class="form-control"
-        placeholder="Your Telephone Number">
-    </div>
-    <div class="form-group mb-3">
-        <input type="text" name="email" class="form-control" placeholder="E-mail">
-    </div>
-    <div class="form-group mb-3">
-        <label for="avatar">Upload Avatar:</label>
-        <input type="file" name="avatar" class="form-control-file">
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-</form>
+<div class="mb-4">
+    <h4 class="my-4 text-center">What's trending</h4>
+    <hr />
+    
     <?php
-        if (isset($_GET["success"]) && $_GET["success"] == "true") {
-            echo "<p style=\"color:green\">Your details have been sent successfully.</p>";
-        }
+    // Dummy trending blog data
+    $trendingBlogs = [
+        [
+            'title' => 'The Ultimate Guide to Web Development',
+            'description' => 'Learn about the key concepts and technologies in web development.',
+            'image_url' => 'images/image2.jpg'
+        ],
+        [
+            'title' => 'Mastering CSS Flexbox and Grid Layouts',
+            'description' => 'Discover how to create responsive layouts using CSS Flexbox and Grid.',
+            'image_url' => 'images/image3.jpg'
+        ],
+        [
+            'title' => 'JavaScript Frameworks Comparison: React vs. Vue vs. Angular',
+            'description' => 'Explore the pros and cons of popular JavaScript frameworks.',
+            'image_url' => 'images/image3.png'
+        ]
+    ];
+
+    foreach ($trendingBlogs as $blog) {
+        echo '<h6 class="mb-1">' . $blog['title'] . '</h6>';
+        echo '<img src="' . $blog['image_url'] . '" alt="' . '" style="width: 100%; height: 70px;">';
+        echo '<a href="'  . '" class="mt-2 btn btn-sm btn-primary">Read More</a>';
+        
+        echo '<hr/>';
+    }
     ?>
+</div>
+
+
 <hr/>
 <h4 class="jumbotron">Courses Offered</h4>
     <ul class="list-group">
@@ -47,3 +53,5 @@
             CI/CD Integration
         </li>
     </ul>
+
+    
