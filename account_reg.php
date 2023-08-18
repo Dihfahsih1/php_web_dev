@@ -17,7 +17,7 @@
                     <i class="fas fa-user-plus"> </i> User Registration
                     </div>
                     <div class="card-body">
-                        <form action="includes/account_process.php" method="post">
+                        <form action="includes/account_process.php" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="username" class="form-label">
                                     <i class="fas fa-user me-1"></i> Username
