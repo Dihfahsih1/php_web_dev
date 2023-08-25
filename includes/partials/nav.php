@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="contact.php">
                     <i class="fas fa-phone me-2"></i>Contact
                 </a>
             </li>
