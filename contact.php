@@ -30,16 +30,13 @@ set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__);
                     <h2>Contact Us</h2>
                     <form>
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" name="email" id="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" rows="4" required></textarea>
+                            <textarea id="message" class="form-control" name="message" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
