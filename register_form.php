@@ -20,36 +20,31 @@
                 <div class="col-lg-5 col-md-6 mt-5" style="border-left: 2px solid white">
                     <div class="container">
                         <h4 class="text-center">Register Now</h4>
-                        <?php
-                            if (isset($_GET["success"]) && $_GET["success"] == "true") {
-                                echo "<p style=\"color:green\">Details saved successfully.</p>";
-                            }
-                        ?>
+                  
                         <form action="includes/process_registration.php" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <input type="text" name="firstName" class="form-control"
-                                placeholder="First Name" value="<?php echo $data['firstName']; ?>">
+                                placeholder="cool name">
                             </div>
 
                             <div class="form-group mb-3">
                                 <input type="text" name="secondName" class="form-control"
-                                placeholder="Second Name" value="<?php echo $data['secondName']; ?>">
+                                placeholder="Second Name">
                             </div>
 
                             <div class="form-group mb-3">
                                 <input type="text" name="course" class="form-control"
-                                placeholder="Course you want" value="<?php echo $data['course']; ?>">
+                                placeholder="Course you want">
                             </div>
 
                             <div class="form-group mb-3">
                                 <input type="text" name="telephone" class="form-control"
-                                placeholder="Your Telephone Number"
-                                value="<?php echo $data['telephone']; ?>">
+                                placeholder="Your Telephone Number">
                             </div>
 
                             <div class="form-group mb-3">
                                 <input type="text" name="email" class="form-control"
-                                placeholder="E-mail" value="<?php echo $data['email']; ?>">
+                                placeholder="E-mail">
                             </div>
 
                             <div class="form-group mb-3">

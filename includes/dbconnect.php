@@ -9,5 +9,11 @@
     // Check if the connection was successful
     if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
+    //echo "Variables passed are not correct";
+    
+    }
+
+    else{
+        echo "connection successful";
     }
 ?>

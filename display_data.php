@@ -72,7 +72,7 @@ session_start();
                                 require_once "includes/dbconnect.php";
 
                                 // Fetch data from the database table 'registration'
-                                $query = "SELECT * FROM registration;";
+                                $query = "SELECT * FROM registration";
                                 $result = mysqli_query($connect, $query);
 
                                 if (mysqli_num_rows($result) > 0) {
