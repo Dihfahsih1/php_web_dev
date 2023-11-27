@@ -4,16 +4,6 @@ ini_set('display_errors', 'On');
 
 require_once "dbconnect.php";
 
-// make primary key in phpmyadmin
-//1. ALTER TABLE registration
-//DROP COLUMN id;
-
-//2. ALTER TABLE registration
-// ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY FIRST;
-
-// ALTER TABLE your_table_name
-// ADD COLUMN image_path VARCHAR(255);
-
 $query = "INSERT INTO registration (firstName, secondName, email, telephone, course) VALUES (?, ?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($connect, $query);
