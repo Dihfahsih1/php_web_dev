@@ -88,7 +88,7 @@ session_start();
                                         echo '<td>';
 
                                         echo '<a href="update.php?id=' . $row['id'] . '"
-                                        class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>';
+                                        class="btn btn-sm btn-success">Update</a>';
 
                                         echo '<a href="includes/process_delete.php?id=' . $row['id'] . '"
                                         class="btn btn-sm btn-danger"

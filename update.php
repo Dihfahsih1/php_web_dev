@@ -76,8 +76,6 @@
                         // Check if the ID parameter is provided in the URL
                         if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             $id = $_GET['id'];
-
-                            try {
                                 // Make sure you have included the database connection code
                                 require_once "includes/dbconnect.php";
 
@@ -93,10 +91,6 @@
                                 if ($data) {
                                     // Display the update form with pre-filled data
                                     ?>
-                                    <h2 class="my-4 text-center">Update Data for
-                                        <?php echo $data['firstName']; ?>
-                                        <?php echo $data['secondName']; ?></h2> 
-                                        <?php echo $data['id']; ?></h2> 
                                     <form action="includes/process_update.php" method="post">
 
                                         <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
@@ -130,13 +124,13 @@
                                         <button type="submit" class="btn btn-warning">Update</button>
                                     </form>
                                     <?php
-                                } else {
+                                }
+                                else {
                                     echo "<p>No data found for the provided ID.</p>";
                                 }
-                            } catch (Exception $e) {
-                                die("Query failed: " . $e->getMessage());
                             }
-                        } else {
+                            
+                        else {
                             echo "<p>Invalid ID provided.</p>";
                         }
                      ?>

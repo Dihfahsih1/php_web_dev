@@ -12,8 +12,4 @@
     //echo "Variables passed are not correct";
     
     }
-
-    else{
-        echo "connection successful";
-    }
 ?>
