@@ -1,21 +1,21 @@
 <?php
-//string variable
-$name="Alice";
+function greetInLanguage($name, $language = "English") {
+    switch ($language) {
+        case "Spanish":
+        echo "Hola, $name!";
+        break;
 
-//double variable
-$price = 600.9;
+        case "French":
+        echo "Bonjour, $name!";
+        break;
 
-//int variable
-$quantity = 4;
+        default:
+        echo "Hello, $name!";
+    }
+}
+greetInLanguage("Maria", "French");
 
-// boolean variable
-$isCustomer = true;
-
-$total= $price * $quantity;
-
-echo "Hello $name, the total price is: $total \n";
-
-echo " $isCustomer";
-
-
-
+function mydate(string $date, string $format = "") {
+    echo 'this is today' . $date .''. $format .'';
+}
+mydate('12', '/');
