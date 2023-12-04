@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home Page</title>
+    <title></title>
     <?php include 'includes/partials/head.html'; ?>
 </head>
 <body style="background-color: black; color: white">
@@ -35,7 +35,9 @@
                              <br>It includes aspects such as web design,
                              web publishing, web programming, and database management.
                              <br>It is the creation of an application that
-                             works over the internet i.e. websites.</p>
+                             works over the internet i.e. websites.
+                             <h1 style="color:red;"><?php include 'function1.php'; ?></h1>
+                            </p>
                     </div>
                     <?php include "includes/partials/testimonies.php"; ?>
                 </div>

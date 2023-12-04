@@ -61,6 +61,7 @@ session_start();
                                 <th>Email</th>
                                 <th>Telephone</th>
                                 <th>Course</th>
+                                <th>Photo</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -83,6 +84,8 @@ session_start();
                                         echo "<td>" . $row['email'] . "</td>";
                                         echo "<td>" . $row['telephone'] . "</td>";
                                         echo "<td>" . $row['course'] . "</td>";
+                                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
+                                        "' width='50' height='50' alt='Avatar'></td>";
 
                                         // Buttons for update and delete actions
                                         echo '<td>';

@@ -8,18 +8,19 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
     
+
     // Prepare the SQL statement to retrieve the avatar and avatar_type based on username
     $query = "SELECT avatar, avatar_type FROM users WHERE username = ?";
-    $stmt = $connect->prepare($query);
+    $stmt = mysqli_prepare($connect, $query);
     
     if ($stmt) {
-        $stmt->bind_param("s", $username,);
-        if ($stmt->execute()) {
-            $stmt->store_result();
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_store_result($stmt);
             
-            if ($stmt->num_rows == 1) {
-                $stmt->bind_result($avatarData, $avatarType);
-                $stmt->fetch();
+            if (mysqli_stmt_num_rows($stmt) == 1) {
+                mysqli_stmt_bind_result($stmt, $avatarData, $avatarType);
+                mysqli_stmt_fetch($stmt);
                 
                 // Set appropriate content type header
                 header("Content-Type: $avatarType");
@@ -29,9 +30,10 @@ if (isset($_SESSION['username'])) {
             }
         }
         
-        $stmt->close();
+        mysqli_stmt_close($stmt);
     }
     
-    $connect->close();
+    // Close the database connection
+    mysqli_close($connect);
 }
 ?>

@@ -59,7 +59,7 @@
                     echo '<li class="nav-item">
                             <div class="d-flex align-items-center">
                             <img src="includes/get_avatar.php" alt="Avatar" class="rounded-circle me-2"
-                                style="width: 70px; height: 70px;">
+                                style="width: 50px; height: 70px;">
                             <div>
                                 <span class="navbar-text">@'. $_SESSION['username'] . '!</span><br>
                                 <span class="navbar-text" style="font-size: 12px;">' .  $_SESSION['email']  . '</span>

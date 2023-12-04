@@ -4,7 +4,8 @@ ini_set('display_errors', 'On');
 
 require_once "dbconnect.php";
 
-$query = "INSERT INTO registration (firstName, secondName, email, telephone, course, avatar) VALUES (?, ?, ?, ?, ?, ?)";
+$query = "INSERT INTO registration (firstName, secondName, email, telephone, course, avatar)
+ VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($connect, $query);
 if (!$stmt) {
