@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theming Example</title>
+    <style class="themeStyles">
+        /* Define default styles here */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Theming Example</h1>
+    <p>This is some sample content.</p>
+
+    <script>
+        function toggleTheme() {
+            const themeStyles = document.getElementByClass('themeStyles');
+            const body = document.body;
+
+            // Check if the current theme is light or dark
+            if (body.classList.contains('dark-theme')) {
+                // Switch to light theme
+                body.classList.remove('dark-theme');
+                themeStyles.innerHTML = `
+                    body {
+                        background-color: #f5f5f5;
+                        color: #333;
+                    }
+
+                    h1 {
+                        color: #007bff;
+                    }
+                `;
+            } else {
+                // Switch to dark theme
+                body.classList.add('dark-theme');
+                themeStyles.innerHTML = `
+                    body {
+                        background-color: #333;
+                        color: #f5f5f5;
+                    }
+
+                    h1 {
+                        color: #61dafb;
+                    }
+                `;
+            }
+        }
+
+        // Automatically toggle theme every 3 seconds
+        setInterval(toggleTheme, 3000);
+    </script>
+</body>
+</html>
