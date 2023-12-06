@@ -87,7 +87,6 @@ session_start();
                                         echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
                                         "' width='50' height='50' alt='Avatar'></td>";
 
-                                        // Buttons for update and delete actions
                                         echo '<td>';
 
                                         echo '<a href="update.php?id=' . $row['id'] . '"
