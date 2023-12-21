@@ -90,16 +90,15 @@ session_start();
                                         echo '<td>';
 
                                         echo '<a href="update.php?id=' . $row['id'] . '"
-                                        class="btn btn-sm btn-success">Update</a>';
-
-                                        echo '<a href="includes/process_delete.php?id=' . $row['id'] . '"                                
+                                        class="btn btn-sm btn-success">
+                                        <i class="fas fa-pencil"></i></a>';
+                                        
+                                        echo '<a class="btn btn-sm btn-danger 
+                                        href="includes/process_delete.php?id=' . $row['id'] . '"                                
                                         onclick="return confirm(\'sure\')">
-                                            <i class="fas fa-trash-alt"></i>Delete</a>';
-                                        echo '|';
-                                        // echo '<a href="#" class="btn btn-sm btn-danger
-                                        //     delete-btn" data-id="' . $row['id'] . '">
-                                        //         <i class="fas fa-trash-alt"></i>
-                                        //     </a>';
+                                            <i class="fas fa-trash-alt"></i></a>';
+                                        
+                                        
                                         echo '</td>';
 
                                         echo "</tr>";

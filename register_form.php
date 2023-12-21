@@ -33,8 +33,15 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="text" name="course" class="form-control"
-                                placeholder="Course you want">
+                            <select name="course" class="form-control custom-select" required>
+                                <option value="" disabled selected>Select a Course</option>
+                                <option value="MachineLearning">Machine Learning</option>
+                                <option value="Webdevelopment">Web Development</option>
+                                <option value="Datascience">Data Science Fundamentals</option>
+                                <option value="Mobileappdev">Mobile App Development</option>
+                                <option value="Algorithms">Algorithms and Data Structures</option>
+                                <option value="Cybersecurity">Cybersecurity Basics</option>
+                            </select>
                             </div>
 
                             <div class="form-group mb-3">

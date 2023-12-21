@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="project.php">
                     <i class="fas fa-user me-2"></i>Projects
                 </a>
             </li>

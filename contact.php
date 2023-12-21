@@ -4,17 +4,63 @@ set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Contact Page</title>
     <?php include 'includes/partials/head.html'; ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        button.btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        button.btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        ul.list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        ul.list-unstyled li a {
+            text-decoration: none;
+        }
+
+        ul.list-unstyled li i {
+            margin-right: 10px;
+        }
+    </style>
 </head>
-<body style="background-color: black; color: white">
+<body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-lg-2 mt-2" style="border-left:2px solid white;">
+            <div class="col-md-3 col-lg-2 mt-2" style="border-left: 2px solid white;">
                 <?php include 'includes/partials/nav.php'; ?>
             </div>
 
@@ -27,27 +73,27 @@ set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__);
                     <?php endif; ?>
                     
                     <!-- Your contact page content goes here -->
-                    <h2>Contact Us</h2>
+                    <h2 class="mb-4">Contact Us</h2>
                     <form>
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" required>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" required>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" class="form-control" name="message" rows="4" required></textarea>
+                            <textarea id="message" class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </form>
 
                     <!-- Links for contacting through social media -->
                     <div class="mt-4">
                         <p>Contact us through:</p>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-dark"><i class="fab fa-twitter mr-2"></i>Twitter</a></li>
-                            <li><a href="#" class="text-success"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a></li>
-                            <li><a href="#" class="text-primary"><i class="fab fa-facebook mr-2"></i>Facebook</a></li>
+                            <li><a href="#" class="text-dark"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" class="text-success"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                            <li><a href="#" class="text-primary"><i class="fab fa-facebook"></i> Facebook</a></li>
                         </ul>
                     </div>
                 </div>
