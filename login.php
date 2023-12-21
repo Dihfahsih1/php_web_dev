@@ -83,7 +83,7 @@ ini_set('display_errors', 'On');
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="fas fa-key"></i> Password:</label>
-                                <input type="password" class="form-control" name="password" required>
+                                <input type="password" class="form-control" name="pwd" required>
                             </div>
                             <button type="submit" class="btn btn-dark btn-block">
                                 <i class="fas fa-sign-in-alt"></i> Login

@@ -1,5 +1,5 @@
 
-<?php session_start(); ?>
+<!--  -->
 <nav class="navbar navbar-expand-md navbar-dark bg-black flex-md-column">
     <!-- Brand/logo -->
 

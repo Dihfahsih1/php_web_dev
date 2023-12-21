@@ -2,9 +2,9 @@
 session_start();
 require_once "dbconnect.php"; // Include your database connection
 
-if (isset($_POST['username'], $_POST['password'])) {
+if (isset($_POST['username'], $_POST['pwd'])) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = $_POST['pwd'];
 
     // Prepare the SQL statement
     $query = "SELECT * FROM users WHERE username = ?";
@@ -17,7 +17,7 @@ if (isset($_POST['username'], $_POST['password'])) {
                 $user = $result->fetch_assoc();
 
                 // Verify the hashed password
-                if (password_verify($password, $user['password'])) {
+                if (password_verify($password, $user['pwd'])) {
                     // Set session variables
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['email'] = $user['email'];

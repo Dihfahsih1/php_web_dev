@@ -38,7 +38,7 @@
                                 <label for="password" class="form-label">
                                     <i class="fas fa-lock me-1"></i> Password
                                 </label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="pwd" required>
                             </div>
                             <div class="form-group">
                                 <label for="confirm_password">
