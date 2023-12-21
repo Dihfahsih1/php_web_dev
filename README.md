@@ -1,4 +1,4 @@
-# Project Name
+# Web Development and Design - PHP, MYSQL, Bootstrap, CSS3 and HTML5
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
