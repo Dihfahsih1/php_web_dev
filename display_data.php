@@ -17,13 +17,13 @@ session_start();
     <body style="background-color:black; color:white">
         <div class="container-fluid" style="max-height: 1000px; overflow: auto;">
             <div class="row">
-                <div class="col-md-3 col-lg-2 mt-2" style="border-left:2px solid white;">
+                <div class="col-md-3 col-lg-2" style="border-left:2px solid white;">
                 <?php
                     include 'includes/partials/nav.php';
                 ?>
                 </div>
                 
-                <div class="col-lg-8 col-md-6  mt-4">
+                <div class="col-lg-8 col-md-6  mt-2">
                    
                     <h3 class="my-4 text-center">Registered Students</h3>
                     

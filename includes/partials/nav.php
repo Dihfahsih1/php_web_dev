@@ -5,9 +5,8 @@
 
     <a class="navbar-brand" href="index.php">
         <!-- Add styling to the image -->
-        <img src="images/logo.png" alt="User Image"
-        class="img-fluid" style="max-width:220px;
-        border-radius: 3%; margin-left:4%">
+        <img src="images/logo.jpg" alt="User Image"
+        class="img-fluid logo-image">
     </a>
     <!-- Mobile Menu Icon -->
     <button class="navbar-toggler" type="button"
@@ -59,7 +58,7 @@
                     echo '<li class="nav-item">
                             <div class="d-flex align-items-center">
                             <img src="includes/get_avatar.php" alt="Avatar" class="rounded-circle me-2"
-                                style="width: 50px; height: 70px;">
+                                style="width: 100px; height: 100px;">
                             <div>
                                 <span class="navbar-text">@'. $_SESSION['username'] . '!</span><br>
                                 <span class="navbar-text" style="font-size: 12px;">' .  $_SESSION['email']  . '</span>
@@ -87,5 +86,5 @@
             </ul>
     </div>
 </nav>
-<canvas id="clockCanvas" width="200" height="200"></canvas>
+<!-- <canvas id="clockCanvas" width="200" height="200"></canvas> -->
 <script src="js/canvas/clockCanvas.js"></script>

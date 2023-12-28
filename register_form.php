@@ -24,7 +24,7 @@
                         <form action="includes/process_registration.php" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <input type="text" name="firstName" class="form-control"
-                                placeholder="cool name">
+                                placeholder="First Name">
                             </div>
 
                             <div class="form-group mb-3">

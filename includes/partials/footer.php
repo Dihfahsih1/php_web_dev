@@ -23,7 +23,7 @@
             </div>
             <div class="container-fluid bg-dark text-center border-top py-2">
                 <p style="font-size: 14px; margin-bottom: 0;">&copy; 2024 SofTech Ug. All rights reserved.</p>
-                <canvas id="timeCanvas" width="600" height="70"></canvas>
+                <!-- <canvas id="timeCanvas" width="600" height="70"></canvas> -->
             </div>
         </footer>
 

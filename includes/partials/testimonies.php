@@ -1,5 +1,5 @@
 <div class="jumbotron text-center custom-jumbotron">
-    <h2>Student Testimonials</h2>
+    <h2>Clients' feedback</h2>
     <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php
