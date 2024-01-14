@@ -43,6 +43,7 @@ color: #fff; /* Set the color of the content */
                 <h4 style="font-size:30px;">Leading Web Development hub in Uganda</h4>
             </div>
         </div>
+        
         <div class="carousel-item">
             <img src="images/image1.webp" alt="image2" />
             <!-- Add the overlay element -->
