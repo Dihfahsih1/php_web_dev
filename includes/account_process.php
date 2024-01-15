@@ -38,5 +38,4 @@ if (isset($_POST['username'], $_POST['email'], $_POST['pwd'], $_POST['confirm_pa
     echo "Form not submitted";
 }
 
-$connect->close();
 ?>
