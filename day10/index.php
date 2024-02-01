@@ -13,13 +13,13 @@
             $salary=200.5;
             $my_likes=array("coding","reading", 233.3, false);
 
-            // Use implode() function to join array elements into a string
+          
             $likes = implode(", ", $my_likes);
 
             echo "My name is $name, my age is $age, my salary is $salary and my likes are $likes.";
         }
 
-        // Don't forget the semicolon after function call
+  
         dihfahsih();
     ?>
 </body>

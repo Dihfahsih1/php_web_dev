@@ -8,7 +8,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
-        <?php include 'includes/partials/head.html'; ?>
+        <?php 
+        include 'includes/partials/head.html'; 
+        
+        ?>
     </head>
     <body style="background-color: black; color: white">
         <div class="container-fluid">

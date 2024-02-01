@@ -17,7 +17,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['pwd'], $_POST['confirm_pa
     $avatarData = file_get_contents($_FILES['avatar']['tmp_name']);
     $avatarType = $_FILES['avatar']['type'];
 
-    $query = "INSERT INTO users (username, email, pwd, avatar) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO users (username, email, password, avatar) VALUES (?, ?, ?, ?)";
     $stmt = $connect->prepare($query);
 
     if (!$stmt) {

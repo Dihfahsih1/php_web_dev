@@ -17,7 +17,7 @@ if (isset($_POST['username'], $_POST['pwd'])) {
                 $user = $result->fetch_assoc();
 
                 // Verify the hashed password
-                if (password_verify($password, $user['pwd'])) {
+                if (password_verify($password, $user['password'])) {
                     // Set session variables
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['email'] = $user['email'];

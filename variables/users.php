@@ -3,11 +3,8 @@ $name = 'John'; #string variable
 $age = 100; #int variable
 $is_married = false; #boolean
 
-$name='Joy';
+echo $name . $age;
 
-echo '$name'; #printing
-echo $age;
-echo $is_married;
 
 
 ?>

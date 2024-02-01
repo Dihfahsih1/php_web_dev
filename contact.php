@@ -71,23 +71,23 @@ set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__);
                             Logged In Successfully!
                         </div>
                     <?php endif; ?>
-                    
-                    <!-- Your contact page content goes here -->
-                    <h2 class="mb-4">Contact Us</h2>
+                    <h2 class="mb-4 text-center">Contact Us</h2>
                     <form>
                         <div class="form-group">
                             <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
                         </div>
+
                         <div class="form-group">
                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
                         </div>
+
                         <div class="form-group">
                             <textarea id="message" class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
                         </div>
+
                         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </form>
 
-                    <!-- Links for contacting through social media -->
                     <div class="mt-4">
                         <p>Contact us through:</p>
                         <ul class="list-unstyled">
