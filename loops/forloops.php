@@ -1,6 +1,13 @@
+
 <?php
-for ($x = 0; $x <= 10; $x++) {
-    if ($x == 3) break;
-    echo "The number is: $x <br>";
-  }
-?>
+    $a = 0;
+    $b = 0;
+    
+    for( $i = 1; $i<=5; $i++ ) {
+       $a +=10;
+       $b +=23;
+       
+    }
+    echo $a . ",";
+ ?>
+ 
