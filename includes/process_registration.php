@@ -1,6 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+
 
 require_once "dbconnect.php";
 
@@ -12,7 +11,6 @@ if (!$stmt) {
     die("Prepare failed: " . mysqli_error($connect));
 }
 
-// Use file_get_contents to read the image file
 $avatarPath = $_FILES["avatar"]["tmp_name"];
 $avatarData = file_get_contents($avatarPath);
 

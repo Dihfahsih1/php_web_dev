@@ -91,9 +91,23 @@ set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__);
                     <div class="mt-4">
                         <p>Contact us through:</p>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-dark"><i class="fab fa-twitter"></i> Twitter</a></li>
-                            <li><a href="#" class="text-success"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-                            <li><a href="#" class="text-primary"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li>
+                                <a href="#" class="text-dark">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="#" class="text-success">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="text-primary">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -107,17 +121,14 @@ set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__);
     <?php include 'includes/partials/footer.php'; ?>
 
     <script>
-        // Wait for the document to be ready
         document.addEventListener("DOMContentLoaded", function() {
-            // Find the success alert element
             const successAlert = document.getElementById("successAlert");
             
-            // Check if the alert element exists
+            
             if (successAlert) {
-                // Hide the alert after 5 seconds
                 setTimeout(function() {
                     successAlert.style.display = "none";
-                }, 5000); // 5000 milliseconds = 5 seconds
+                }, 5000);
             }
         });
     </script>
