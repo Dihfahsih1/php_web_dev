@@ -18,9 +18,9 @@ session_start();
         <div class="container-fluid" style="max-height: 1000px; overflow: auto;">
             <div class="row">
                 <div class="col-md-3 col-lg-2" style="border-left:2px solid white;">
-                <?php
-                    include 'includes/partials/nav.php';
-                ?>
+                    <?php
+                        include 'includes/partials/nav.php';
+                    ?>
                 </div>
                 
                 <div class="col-lg-8 col-md-6  mt-2">
@@ -53,67 +53,43 @@ session_start();
                     <i style="text-align:right">
                       <a href="register_form.php" class="btn btn-primary float-end">Register</a>
                     </i>
-                    <table class="table table-bordered table-striped">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>First Name</th>
-                                <th>Second Name</th>
-                                <th>Email</th>
-                                <th>Telephone</th>
-                                <th>Course</th>
-                                <th>Photo</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                            // The PHP code for fetching and displaying data is placed here
-                            try {
-                                // Make sure you have included the database connection code
-                                require_once "includes/dbconnect.php";
+                <div class="row">
+                    <?php require_once "includes/dbconnect.php"; ?>
+                
+                    <?php
+                    $query = "SELECT * FROM registration";
+                    $result = mysqli_query($connect, $query);
+                    if (mysqli_num_rows($result) > 0) {
 
-                                // Fetch data from the database table 'registration'
-                                $query = "SELECT * FROM registration";
-                                $result = mysqli_query($connect, $query);
+                        while ($row = mysqli_fetch_assoc($result)) { ?>
+                    
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <div class="card-header">
+                                    <?php echo $row['firstName']; ?>
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p><?php echo $row['secondName']; ?></p>
 
-                                if (mysqli_num_rows($result) > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<tr>";
-                                        echo "<td>" . $row['firstName'] . "</td>";
-                                        echo "<td>" . $row['secondName'] . "</td>";
-                                        echo "<td>" . $row['email'] . "</td>";
-                                        echo "<td>" . $row['telephone'] . "</td>";
-                                        echo "<td>" . $row['course'] . "</td>";
-                                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
-                                        "' width='50' height='50' alt='Avatar'></td>";
+                                        <footer class="blockquote-footer">
+                                            <p><?php echo $row['email']; ?></p>
 
-                                        echo '<td>';
+                                            <cite title="Source Title">
+                                                <p>
+                                                    <?php echo $row['course']; ?>
+                                                </p>
+                                            </cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                        </div>
 
-                                        echo '<a href="update.php?id=' . $row['id'] . '"
-                                        class="btn btn-sm btn-success">
-                                        <i class="fas fa-pencil"></i></a>';
-                                        
-                                        echo '<a class="btn btn-sm btn-danger 
-                                        href="includes/process_delete.php?id=' . $row['id'] . '"                                
-                                        onclick="return confirm(\'sure\')">
-                                            <i class="fas fa-trash-alt"></i></a>';
-                                        
-                                        
-                                        echo '</td>';
+                    </div>
+                        <?php } }?>
 
-                                        echo "</tr>";
-                                    }
-                                } else {
-                                    echo "<tr><td colspan='6'>No data found.</td></tr>";
-                                }
-                            } catch (Exception $e) {
-                                die("Query failed: " . $e->getMessage());
-                            }
-                            ?>
-
-                        </tbody>
-                    </table>
-                    <canvas id="courseChart" width="100" height="50"></canvas>
+                        <canvas id="courseChart" width="100" height="50"></canvas>
+                </div>
                 </div>
 
 
