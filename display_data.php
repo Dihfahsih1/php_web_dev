@@ -80,6 +80,7 @@ session_start();
                                                     <?php echo $row['course']; ?>
                                                 </p>
                                             </cite>
+                                            <a href="update.php?id=<?php echo $row['id'];?>">Update</a>
                                         </footer>
                                     </blockquote>
                                 </div>
@@ -87,6 +88,69 @@ session_start();
 
                     </div>
                         <?php } }?>
+
+                         <table class="table table-bordered table-striped">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Second Name</th>
+                                <th>Email</th>
+                                <th>Telephone</th>
+                                <th>Course</th>
+                                <th>Photo</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            // The PHP code for fetching and displaying data is placed here
+                            try {
+                                // Make sure you have included the database connection code
+                                require_once "includes/dbconnect.php";
+
+                                // Fetch data from the database table 'registration'
+                                $query = "SELECT * FROM registration";
+                                $result = mysqli_query($connect, $query);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['firstName'] . "</td>";
+                                        echo "<td>" . $row['secondName'] . "</td>";
+                                        echo "<td>" . $row['email'] . "</td>";
+                                        echo "<td>" . $row['telephone'] . "</td>";
+                                        echo "<td>" . $row['course'] . "</td>";
+                                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
+                                        "' width='50' height='50' alt='Avatar'></td>";
+
+                                        echo '<td>';
+
+                                        echo '<a href="update.php?id=' . $row['id'] . '"
+                                        class="btn btn-sm btn-success">
+                                        <i class="fas fa-pencil"></i></a>';
+
+                                        echo '<a class="btn btn-sm btn-danger 
+                                        href="includes/process_delete.php?id=' . $row['id'] . '"                                
+                                        onclick="return confirm(\'sure\')">
+                                            <i class="fas fa-trash-alt"></i></a>';
+
+
+                                        echo '</td>';
+
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='6'>No data found.</td></tr>";
+                                }
+                            } catch (Exception $e) {
+                                die("Query failed: " . $e->getMessage());
+                            }
+                            ?>
+
+                        </tbody>
+                    </table>
+                    <canvas id="courseChart" width="100" height="50"></canvas>
+                </div>
 
                         <canvas id="courseChart" width="100" height="50"></canvas>
                 </div>
