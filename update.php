@@ -75,7 +75,7 @@
                     <?php
                         // Check if the ID parameter is provided in the URL
                         if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-                            $id = $_GET['id'];
+                            $id = $_GET['id']; 
                                 // Make sure you have included the database connection code
                                 require_once "includes/dbconnect.php";
 
@@ -93,7 +93,7 @@
                                     ?>
                                     <form action="includes/process_update.php" method="post">
 
-                                        <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                                        <input name="id" value="<?php echo $data['id']; ?>">
 
                                         <div class="form-group mb-3">
                                             <input type="text" name="firstName" class="form-control"
