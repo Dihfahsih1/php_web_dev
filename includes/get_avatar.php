@@ -2,9 +2,8 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-    // User is logged in
-    require_once "dbconnect.php"; // Include your database connection
-    
+   
+    require_once "dbconnect.php"; 
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
     
