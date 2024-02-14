@@ -120,7 +120,8 @@ session_start();
                                         echo "<td>" . $row['email'] . "</td>";
                                         echo "<td>" . $row['telephone'] . "</td>";
                                         echo "<td>" . $row['course'] . "</td>";
-                                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
+                                        echo "<td>
+                                        <img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
                                         "' width='50' height='50' alt='Avatar'></td>";
 
                                         echo '<td>';
@@ -149,7 +150,7 @@ session_start();
 
                         </tbody>
                     </table>
-                    <canvas id="courseChart" width="100" height="50"></canvas>
+                    <!-- <canvas id="courseChart" width="100" height="50"></canvas> -->
                 </div>
 
                         <canvas id="courseChart" width="100" height="50"></canvas>
