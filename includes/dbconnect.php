@@ -1,15 +1,16 @@
 <?php
-    $hostname = 'localhost';
-    $user = 'php_root'; # root
-    $password = 'MugoYA23?'; #leave it empty
+    $dbhost = 'localhost';
+    $user = 'root'; # root
+    $password = ''; #leave it empty
     $dbname = 'php_users';
 
-    $connect = mysqli_connect($hostname, $user, $password, $dbname);
+    $connect = mysqli_connect($dbhost, $user, $password, $dbname);
 
-    // Check if the connection was successful
     if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
-    //echo "Variables passed are not correct";
-    
     }
+    else{
+        echo "Connected successfully";
+    }
+
 ?>
