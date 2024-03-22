@@ -24,7 +24,7 @@ $course = $_POST["course"];
 mysqli_stmt_bind_param($stmt, "ssssss", $fName, $sName, $email, $tel, $course, $avatarData);
 
 if (mysqli_stmt_execute($stmt)) {
-    header("Location: /index.php");
+    header("Location: ../display_data.php");
     // echo "Data inserted successfully.";
 } 
 else {

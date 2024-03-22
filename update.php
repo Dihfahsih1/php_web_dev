@@ -74,8 +74,8 @@
                 <div class="container">
                     <?php
                         // Check if the ID parameter is provided in the URL
-                        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-                            $id = $_GET['id']; 
+                        if (isset($_GET['param']) && is_numeric($_GET['param'])) {
+                            $id = $_GET['param']; 
                                 // Make sure you have included the database connection code
                                 require_once "includes/dbconnect.php";
 

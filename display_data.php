@@ -80,7 +80,7 @@ session_start();
                                                     <?php echo $row['course']; ?>
                                                 </p>
                                             </cite>
-                                            <a href="update.php?id=<?php echo $row['id'];?>">Update</a>
+                                            <a href="update.php?param=<?php echo $row['id'];?>">Update</a>
                                         </footer>
                                     </blockquote>
                                 </div>
@@ -113,37 +113,37 @@ session_start();
                                 $result = mysqli_query($connect, $query);
 
                                 if (mysqli_num_rows($result) > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<tr>";
-                                        echo "<td>" . $row['firstName'] . "</td>";
-                                        echo "<td>" . $row['secondName'] . "</td>";
-                                        echo "<td>" . $row['email'] . "</td>";
-                                        echo "<td>" . $row['telephone'] . "</td>";
-                                        echo "<td>" . $row['course'] . "</td>";
-                                        echo "<td>
-                                        <img src='data:image/jpeg;base64," . base64_encode($row['avatar']) .
-                                        "' width='50' height='50' alt='Avatar'></td>";
+                                    while ($row = mysqli_fetch_assoc($result)) {?>
+                                         <tr>
+                                         <td> <?php echo $row['firstName'];?> </td>
+                                         <td> <?php echo  $row['secondName'];?> </td>
+                                         <td> <?php echo  $row['email']; ?> </td>
+                                         <td> <?php echo  $row['telephone']; ?></td>
+                                         <td> <?php echo  $row['course']; ?> </td>
+                                         <td>
+                                        <img src='data:image/jpeg;base64," <?php base64_encode($row['avatar']) ; ?>
+                                        "' width='50' height='50' alt='Avatar'></td>
 
-                                        echo '<td>';
-
-                                        echo '<a href="update.php?id=' . $row['id'] . '"
+                                    <td>
+                                        <a href="update.php?id='<?php $row['id'];?>'"
                                         class="btn btn-sm btn-success">
-                                        <i class="fas fa-pencil"></i></a>';
+                                        <i class="fas fa-pencil"></i></a>
 
-                                        echo '<a class="btn btn-sm btn-danger 
-                                        href="includes/process_delete.php?id=' . $row['id'] . '"                                
+                                        <a class="btn btn-sm btn-danger"
+                                        href="includes/process_delete.php?id=<?php $row['id'];?>"                                
                                         onclick="return confirm(\'sure\')">
-                                            <i class="fas fa-trash-alt"></i></a>';
+                                        <i class="fas fa-trash-alt"></i></a>'
+                                    </td>
 
-
-                                        echo '</td>';
-
-                                        echo "</tr>";
-                                    }
-                                } else {
-                                    echo "<tr><td colspan='6'>No data found.</td></tr>";
-                                }
-                            } catch (Exception $e) {
+                                </tr>
+                                    <?php } //close the while
+                                 } // close the if statement
+                                 
+                                 else {?><!--  -->
+                                    <tr><td colspan='6'>No data found.</td></tr>
+                                <?php  }?>
+                                
+                                <?php catch (Exception $e) {
                                 die("Query failed: " . $e->getMessage());
                             }
                             ?>
